@@ -1,0 +1,185 @@
+'''
+리스트 (List)
+- 여러 값들을 순서대로 저장할 수 있는 자료형
+- 인덱스(index): 각 값에 부여된 순서 (0부터 시작)
+- 가변 자료형(mutable): 원소의 추가/수정/삭제 가능
+'''
+
+# 리스트 만들기
+list1 = [] # 빈 리스트
+list2 = ["안녕하세요", "반갑습니다"]
+list3 = [10, "good", 3.14, [1,2,3,4]]
+
+print(list1, list2, list3)      # [] ['안녕하세요', '반갑습니다'] [10, 'good', 3.14, [1, 2, 3, 4]]
+
+list4 = list()
+list5 = list("Codingon")
+print(list4, list5)             # [] ['C', 'o', 'd', 'i', 'n', 'g', 'o', 'n']
+
+# 인덱싱과 슬라이싱
+my_list = [1,2,3,4,5]
+print(my_list[0])               # 1
+print(my_list[-1])              # 5
+
+my_list[3] = -1
+print(my_list)                  # [1, 2, 3, -1, 5]
+
+# number = input("네 자릿수 정수를 입력하세요: ")
+# 천 = number[0]
+# 백 = number[1]
+# 십 = number[2]
+# 일 = number[3]
+# print(천, 백, 십, 일)           # 1234 -> 1 2 3 4
+
+#슬라이싱
+my_numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+print(my_numbers[1:4])          # [20, 30, 40]
+print(my_numbers[3:])           # [40, 50, 60, 70, 80, 90, 100]
+print(my_numbers[:4])           # [10, 20, 30, 40]
+print(my_numbers[:])            # [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+print(my_numbers[::-1])         # [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
+my_numbers[2:4] = [300,400]
+print(my_numbers)               # [10, 20, 300, 400, 50, 60, 70, 80, 90, 100]
+
+#실습1-1
+nums = [10, 20, 30, 40, 50]
+print(nums[0])          # 10
+print(nums[-1])         # 50
+
+#실습 1-2
+nums = [100, 200, 300, 400, 500, 600, 700]
+print(nums[2:5])        # [300, 400, 500]
+
+#실습 1-3
+nums = [1, 2, 3, 4, 5]
+nums1 = nums[0] * 2
+nums2 = nums[1] * 2
+nums3 = nums[2] * 2
+nums4 = nums[3] * 2
+nums5 = nums[4] * 2
+print([nums1, nums2, nums3, nums4, nums5])          # [2, 4, 6, 8, 10]
+
+#실습 1-4
+items = ["a", "b", "c", "d", "e"]
+print(items[::-1])      # ['e', 'd', 'c', 'b', 'a']
+
+#실습 1-5
+#data = ["zero", "one", "two", "three", "four", "five"]
+#print(data[::2])        # ['zero', 'two', 'four']
+
+#실습 1-6
+movies = ["인셉션", "인터스텔라", "어벤져스", "라라랜드", "기생충"]
+movies[2:4] = "매트릭스", "타이타닉" 
+print(movies)           # ['인셉션', '인터스텔라', '매트릭스', '타이타닉', '기생충']
+
+#실습 1-7
+subject = ["국어", "수학", "영어", "물리", "화학", "생물", "역사", "지구과학", "윤리"]
+print(subject[3::2])       # ['물리', '생물', '지구과학'] # print(subject[3:8:2])
+
+#실습 1-8
+data = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+data1 = data[0:3][::-1]
+data2 = data[3:6][::-1]
+data3 = data[6:9][::-1]
+print(data1, data2, data3)      # ['C', 'B', 'A'] ['F', 'E', 'D'] ['I', 'H', 'G']   
+
+# print(data[0:3] [::-1], end = " ")
+# print(data[3:6] [::-1], end = " ")
+# print(data[6:9] [::-1], end = " ")
+
+# 인덱싱, 슬라이싱 할 때 주의사항
+my_list = [1, 2, 3, 4]
+# my_list[5]                    # IndexError: list index out of range
+
+my_list = [1, 2, 3, 4, 5]
+print(my_list[4:1:2])           # [] 빈 값
+print(my_list[1:3:-1])          # [] 빈 값
+
+# 리스트 연산 - del
+my_list = [10, 20, 30, 40, 50]
+del my_list[2]                  # 특정 요소 삭제
+print(my_list)                  # [10, 20, 40, 50]
+
+del my_list[1:3]                # 슬라이스 범위 삭제
+print(my_list)                  # [10, 50]
+
+#del my_list                     # 리스트 삭제
+#print(my_list)                  # NameError: name 'my_list' is not defined
+
+# 리스트 연결 ( + )
+list1 = ["가", "나", "다"]
+list2 = ["라", "마", "바"]
+new_list = list1 + list2
+print(list1, list2, new_list, sep=" / ")        # ['가', '나', '다'] / ['라', '마', '바'] / ['가', '나', '다', '라', '마', '바']
+
+# 리스트 반복 ( * )
+medal = ["금", "은", "동"]
+new_list = medal * 3
+print(medal, new_list, sep=" / ")               # ['금', '은', '동'] / ['금', '은', '동', '금', '은', '동', '금', '은', '동']
+
+# 포함 여부 (in, not in)
+fruits = ["토마토", "사과", "포도", "수박", "바나나"]
+print("포도" in fruits)                         # True
+print("참외" not in fruits)                     # True
+
+
+#실습 2-1
+fruits = ["apple", "banana", "cherry", "grape", "watermelon", "strawberry" ]
+del fruits[1:4]
+print(fruits)                   # ['apple', 'watermelon', 'strawberry']
+
+result = fruits[:1] + fruits[1:]
+print(result)
+
+#실습 2-2
+letters = ["A", "B"]
+new_letters = letters * 3
+del new_letters[2]
+print(new_letters)              # ['A', 'B', 'B', 'A', 'B']
+
+# 리스트 주요 메서드
+# 길이
+numbers = [1,2,3,4,5]
+print(len(numbers))                     # 5
+print(len(numbers), len("codingon"))    # 5 8
+
+# 삽입
+numbers.append(6)
+numbers.append(7)
+numbers.append(8)
+print(numbers)                          # [1, 2, 3, 4, 5, 6, 7, 8]
+
+numbers.insert(2, 2.5)
+numbers.insert(4, 3.5)
+print(numbers)                          # [1, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8]
+
+numbers.extend([9,10])
+print(numbers)                          # [1, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10]
+
+
+# 삭제
+numbers.append(2.5)                     # [1, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 2.5]
+numbers.remove(2.5)
+print(numbers)                          # [1, 2, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 2.5]
+
+a = numbers.pop(1)                      
+print(a)                                # 2 삭제
+print(numbers)                          # [1, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 2.5]
+
+b = numbers.pop()                      
+print(b)                                # 2.5 삭제
+print(numbers)                          # [1, 3, 3.5, 4, 5, 6, 7, 8, 9, 10]
+
+# 정렬
+numbers1 = [3,2,1,4]
+numbers1.sort()
+print(numbers1)                                     # [1, 2, 3, 4]
+
+numbers1.sort(reverse=True)
+print(numbers1)                                     # [4, 3, 2, 1]
+
+numbers2 = [50, 52, 53, 51]
+new_numbers = sorted(numbers2)
+new_numbers_desc = sorted(numbers2, reverse=True)
+print(numbers2, new_numbers, new_numbers_desc)      # [50, 52, 53, 51] [50, 51, 52, 53] [53, 52, 51, 50]
+
