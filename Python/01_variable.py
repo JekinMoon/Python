@@ -7,13 +7,13 @@
 print("Hello World")
 
 # print 구분자 옵션
-# sep
-print("가", "나", "다", sep="-")
+# sep = '여러 값 구분자'
+print("가", "나", "다", sep="-")            # 가-나-다
 
 # print 줄바꿈 옵션
-# end
-print("안녕하세요.", end=" ")
-print("반갑습니다.")
+# end = '줄바꿈 구분자'
+print("안녕하세요.", end=" ")               
+print("반갑습니다.")                        # 안녕하세요. 반갑습니다.
 
 
 #변수
