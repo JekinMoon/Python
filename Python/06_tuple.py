@@ -16,6 +16,7 @@ print(type(my_tuple2))              # <class 'tuple'>
 # 원소가 하나인 튜플 생성
 single_el_tuple = (100,)
 print(single_el_tuple)              # (100,)
+print(type(single_el_tuple))        # <class 'tuple'>
 
 # 튜플 생성 함수로 생성
 my_tuple2 = tuple()

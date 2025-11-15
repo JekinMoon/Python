@@ -4,8 +4,8 @@
 
 # input 함수 사용법
 # my_input = input("콘솔에 띄울 설명")
-#name = input("이름을 입력하세요: ")
-#print(name)
+# name = input("이름을 입력하세요: ")
+# print(name)
 
 # 숫자로 활용 시 '형 변환' 필요
 # a = int(input())
@@ -32,13 +32,13 @@
 # print(f"안녕하세요. 저는 {name}이고, {age}살입니다.")
 
 # 실습4-1
-# 가로 = int(input("가로를 입력하세요: "))
-# 세로 = int(input("세로를 입력하세요: "))
-# 넓이 = 가로*세로
+# 가로 = int(input("가로를 입력하세요: "))    # 가로: 20 
+# 세로 = int(input("세로를 입력하세요: "))    # 세로: 10
+# 넓이 = 가로*세로        
 # 둘레 = 2*(가로+세로)
 
-# print(f"넓이: {넓이}" )
-# print(f"둘레: {둘레}")
+# print(f"넓이: {넓이}" )                    # 넓이: 200
+# print(f"둘레: {둘레}")                     # 둘레: 60
 
 #실습4-2
 # num = int(input("네 자리 정수를 입력하세요: "))
@@ -65,6 +65,6 @@
 # year, month, day = input("년, 월, 일을 입력해주세요: ").split('.')
 # hour, minute, second = input("시, 분, 초를 입력해주세요: ").split(':')
 
-# print(f'''RE3의 개강일은 {year}년 {month}월 {day}일 
+# print(f'''RE5의 개강일은 {year}년 {month}월 {day}일 
 # 시작 시간은 {hour}시 {minute}분 {second}초 입니다.''')
 

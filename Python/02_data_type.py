@@ -88,13 +88,13 @@ print(f"내 이름은 {name}이고, 나이는 {age}입니다.")
 
 # 실습1
 title, director, year, genre = "Inception", "Christopher Nolan", 2010, "Sci-Fi"
-print(f"Title: {title} Director: {director} Year: {year} Genre: {genre}")
+print(f"Title: {title} Director: {director} Year: {year} Genre: {genre}")         #Title: Inception Director: Christopher Nolan Year: 2010 Genre: Sci-Fi
 
 A = "Title: Inception"
 B = "Director: Christopher Nolan"
 C = "Year: 2010"
 D = "Genre: Sci-Fi"
-print(A,B,C,D)
+print(A,B,C,D)                            # Title: Inception Director: Christopher Nolan Year: 2010 Genre: Sci-Fi
 
 # 실습2
 name, age, mbti = "문상익", 37, "ISTP"
