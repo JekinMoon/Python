@@ -44,9 +44,9 @@ print(person2["age"])
 # print(person2["city"])                # KeyError: 'city'
 
 # get 메서드를 활용한 조회
-print(person2.get("name"))
-print(person2.get("email"))             # None -> default값
-print(person2.get("email", "이메일이 존재하지 않습니다"))       # 이메일이 존재하지 않습니다
+print(person2.get("name"))                                      # Luna
+print(person2.get("email"))                                     # None (오류 아님) -> default값
+print(person2.get("email", "이메일이 존재하지 않습니다"))       # 이메일이 존재하지 않습니다(기본값 제공)
 
 # get 사용 예제
 user_data = {

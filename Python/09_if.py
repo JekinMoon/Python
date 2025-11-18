@@ -6,6 +6,7 @@
 
 # 조건문의 기초 문법
 # if + 조건 -> 조건이 참이면 실행
+
 '''
 a = int(input())
 if a > 10:
@@ -71,7 +72,7 @@ elif score >= 60:
 else:
     print("F")
 
-    
+     
 # <실습3>
 age = int(input("나이를 입력해주세요: "))
 
@@ -86,9 +87,16 @@ else:
 
 
 
-if age >= 19
-        >=16
-        >=13
+age = int(input("나이를 입력해주세요: "))
+
+if age >= 19 :
+    print("청소년 관람 불가 가능")
+elif age >=16:
+    print("15세 이상 관람가")
+elif age >=13:
+    print("12세 이상 관람가")
+else:
+    print("전체 관람가")
 
 
 
@@ -141,7 +149,7 @@ if username == "admin":
 else:
     print("잘못된 사용자입니다.")
 
-'''
+
 
 # <실습5>
 
@@ -166,6 +174,64 @@ elif food == "도시락":
         print(f"{food} 구매 성공!")
     else:
          print("금액이 부족합니다.")
-
 else:
     print("유효하지 않은 음식명입니다.")
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1)
+money = int(input("금액을 입력해주세요: "))
+food = (input("음식을 입력해주세요(김밥/삼각김밥/도시락): "))
+
+KIMBAB = "김밥"                 # 상수(대문자)
+SAMKIM = "삼각김밥"
+DOSIRAK = "도시락"
+
+k_price, s_price, d_price = 2500, 1500, 4000
+
+if food == KIMBAB:
+    if money >= k_price:
+        print(f"{KIMBAB}을 구입했습니다")
+    else:
+        print("금액이 부족해요")
+elif food == SAMKIM:
+    if money >= s_price:
+         print(f"{SAMKIM}을 구입했습니다")
+    else:
+        print("금액이 부족해요")
+elif food == DOSIRAK:
+    if money >= s_price:
+         print(f"{DOSIRAK}을 구입했습니다")
+    else:
+        print("금액이 부족해요")
+else:
+    print("입력이 잘못됐습니다")
+
+
+# 2) 딕셔너리 사용
+money = int(input("금액을 입력해주세요: "))
+food = (input("음식을 입력해주세요(김밥/삼각김밥/도시락): "))
+
+prices = {
+    "김밥": 2500,
+    "삼각김밥": 1500,
+    "도시락": 4000
+}
+
+if food in prices:
+    if money >= prices[food]:
+        print(f"{food}을 구입했습니다.")
+    else:
+        print(f"금액이 부족해요")
+else:
+    print("입력이 잘못됐습니다.")
+
+
+
+
+
+
+'''
+
+
+
+
