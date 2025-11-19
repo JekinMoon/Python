@@ -262,11 +262,7 @@ for i in range(1, n+1):
 
     
 
-
-    
-
-
-달력 출력하기
+# 달력 출력하기
 
 import calendar
 calendar.setfirstweekday(calendar.SUNDAY)
@@ -278,3 +274,41 @@ cal = calendar.month(year, month)
 print(cal)
    
 '''
+
+
+# 리스트 컴프리헨션
+# - for문을 리스트에 한줄로 축약하여 새 리스트를 생성하는 문법
+# - [표현식(리스트의 원소) for 변수 in 반복대상 if 조건]
+# - 표현식 : 값을 유도하는 식 (표현)
+
+# for문 이용
+squares = []
+for x in range(1,6):
+    squares.append(x ** 2)
+print(squares)              # [1, 4, 9, 16, 25]
+
+# 리스트 컴프리헨션
+squares2 = [x ** 2 for x in range(1,6)]
+print(squares2)             # [1, 4, 9, 16, 25]
+
+
+# 조건문 추가하기
+squares3 = [x ** 2 for x in range(1, 11) if x % 2 == 0]
+print(squares3)             # [4, 16, 36, 64, 100]
+
+
+# <실습4-1> 제곱값 리스트 만들기
+squares = [x ** 2 for x in range(1,11)]
+print(squares)              # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# <실습4-2> 3의 배수만 리스트로 만들기
+result = [x for x in range(1, 51) if x % 3 == 0]
+print(result)             # [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]
+
+# <실습4-3> 문자열 리스트에서 길이가 5 이상인 단어만 뽑기
+fruits = ["apple", "fig", "banana", "plum", "cherry", "pear", "orange"]
+words = [fruit for fruit in fruits if len(fruit)>=5]
+print(words)             # ['apple', 'banana', 'cherry', 'orange']
+
+
+
