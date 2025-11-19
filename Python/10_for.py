@@ -262,17 +262,7 @@ for i in range(1, n+1):
 
     
 
-# 달력 출력하기
-
-import calendar
-calendar.setfirstweekday(calendar.SUNDAY)
-
-year = int(input("년도를 입력하세요: "))
-month = int(input("월을 입력하세요: "))
-
-cal = calendar.month(year, month)
-print(cal)
-   
+  
 '''
 
 
