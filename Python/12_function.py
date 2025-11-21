@@ -441,6 +441,13 @@ print(sorted(people, key=lambda age : age[1]))        # [('Bob', 25), ('Alice', 
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 1)
 solution = lambda a, b: max(int(str(a) + str(b)), 2 * a * b)
-print(solution2(2, 91))
-print(solution2(91, 2))
+
+# 2)
+def solution(a, b):
+    return max(int(str(a)+ str(b)), 2 * a * b)
+
+   
+print(solution(2, 91))
+print(solution(91, 2))
