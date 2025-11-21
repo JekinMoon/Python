@@ -213,12 +213,37 @@ while dan <= 9:
                    # [8단 ] 8 x 2 = 16 / 8 x 4 = 32 / 8 x 6 = 48 / 8 x 8 = 64 / 8 x 10 = 80
                    # [9단 ] 9 x 2 = 18 / 9 x 4 = 36 / 9 x 6 = 54 / 9 x 8 = 72 / 9 x 10 = 90
 
-'''
 
-# <실습3>
 
-ID = "codingonre5"
-PW = "codingon"
+# <실습3-1>
+
+# 아이디와 비밀번호를 저장할 변수
+user_id = "codingon"
+user_pw = "abc123"
+
+# ID 먼저 검사
+while True:
+    id_input = input("ID를 입력하세요: ")
+
+    if id_input != user_id:
+        print("ID가 일치하지 않습니다.")
+        continue
+
+    while True:
+        pw_input = input("비밀번호를 입력하세요: ")
+
+        if pw_input != user_pw:
+            print("비밀번호가 일치하지 않습니다")
+            continue
+
+        print("로그인 성공!")
+        break
+    break
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ID = "codingon"
+PW = "abc123"
 
 
 while True:
@@ -236,7 +261,64 @@ while True:
         break
 
 
-# <실습 3 추가>
+
+# <실습 3-2 >
+
+user_id = "codingon"
+user_pw = "abc123"
+
+while True:             # 전체 프로그램 반복
+    print("=== 로그인 화면 ===")
+    print("1. 로그인")
+    print("2. 종료")
+    main_sel = input("선택: ")
+
+    if main_sel == "2":
+         print("프로그램을 종료합니다.")
+         break
+    
+    elif main_sel != "1":
+         print("잘못 선택하셨습니다.\n")
+         continue
+    
+    # 로그인
+    id_input = input("ID : ")
+    pw_input = input("PW : ")
+
+    if id_input != user_id or pw_input != user_pw:
+         print("로그인 실패! 다시 시도해주세요.\n")
+         continue
+    
+    print("로그인 성공!\n")
+    
+    # 로그인 후 메뉴 화면
+    while True:
+        print("=== 메뉴 ===")
+        print("1. 정보 보기")
+        print("2. 설정")
+        print("3. 로그아웃")
+        print("============")
+
+        sel = input("메뉴 선택: ")
+
+        if sel == "1":
+            print("회원 정보입니다.\n")
+            continue
+        elif sel == "2":
+            print("설정 화면입니다.\n")
+            continue
+
+        elif sel == "3":
+            print("로그아웃합니다.\n")
+            break               # 안쪽 while만 끊고 로그인 화면으로
+        else:
+            print("잘못된 입력입니다.\n")
+            continue
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+
 
 ID = "codingon"
 PW = "abc123"
@@ -255,7 +337,7 @@ while True:
             id_input = input("ID: ")
             pw_input = input("PW: ")
 
-            if id_input != ID and pw_input != PW:
+            if id_input != ID or pw_input != PW:
                    print("로그인 실패! 다시 시도해주세요.")
                    continue
             else:
@@ -284,3 +366,4 @@ while True:
 
 
 
+''''''

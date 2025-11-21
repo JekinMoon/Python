@@ -36,4 +36,37 @@ month = int(input("월을 입력하세요: "))
 cal = calendar.month(year, month)
 print(cal)
 
+
+
+print("=== 간단한 계산기 ===")
+
+# 사용자로부터 두 숫자 입력받기
+num1 = float(input("첫 번째 숫자를 입력하세요: "))
+num2 = float(input("두 번째 숫자를 입력하세요: "))
+
+# 계산 결과 출력
+print(f"{num1} + {num2} = {num1 + num2}")
+print(f"{num1} - {num2} = {num1 - num2}")
+print(f"{num1} * {num2} = {num1 * num2}")
+
+if num2 != 0:
+    print(f"{num1} / {num2} = {num1 / num2}")
+else:
+    print("0으로 나눌 수 없습니다.")
+
+
 '''
+
+# D-day 계산기
+from datetime import datetime
+target = input("D-Day 목표 날짜를 입력하세요 (YYYY-MM-DD): ")
+target_date = datetime.strptime(target, "%Y-%m-%d").date()
+today = datetime.today().date()
+delta = (target_date - today).days
+
+if delta > 0:
+    print(f"D-{delta}")
+elif delta == 0:
+    print("D-Day!")
+else:
+    print(f"D+{-delta}")
