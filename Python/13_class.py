@@ -73,12 +73,12 @@ class Book:
 
     def progress(self):
         percent = (self.current_page/self.total_pages) * 100
-        return (f"이 책을 읽은 퍼센트는 {percent:.1f} % 입니다")
+        return (f"현재 책을 읽은 분량은 {percent:.1f} % 입니다")
             
 book = Book("해리포터 불의잔", "J.K.롤링", 608)
 
 book.read_page(345)
-print(book.progress())              # 이 책을 읽은 퍼센트는 64.1 % 입니다
+print(book.progress())              # 현재 책을 읽은 분량은 64.1 % 입니다
 
 
 
@@ -174,7 +174,8 @@ class User:
         
     def add_points(self, amount):
         self.points += amount
-    
+        
+        
     def get_level(self):
         if self.points >= 500:
             return "Gold"
@@ -186,11 +187,11 @@ class User:
     def get_total_users(cls):
         print(f"총 유저 수: {cls.total_users}" )
 
-u1 = User("kim")
-print(u1.username)
+u1 = User("kim", 0)
+print(u1.username)              # kim
 u1.add_points(100)
-print(u1.get_level())
-User.get_total_users()
+print(u1.get_level())           # Silver
+User.get_total_users()          # 총 유저 수: 1
 
 
 
@@ -220,7 +221,7 @@ class Person2:
 p1 = Person2("lee", 15 )
 print(p1.name)
 
-# print(p1.__age) -> X
+# print(p1.__age) -> X      # AttributeError
 print(p1.get_age())         # 15
 p1.set_age(-10)             # 유효하지 않은 나이입니다.
 
@@ -251,7 +252,7 @@ ex1.value = 100
 print(ex1.value)            # 100
 ex1.value = -100            # 유효하지 않은 값입니다.
 
-'''
+
 
 
 # <실습3-1> UserAccount클래스: 비밀번호 보호
@@ -297,4 +298,7 @@ class Student:
 s = Student(85)
 print(f"이 학생의 점수는 {s.score} 점 입니다.")            # 이 학생의 점수는 85 점 입니다.
 s.score = 150
-print(s1.score)                                            # ValueError: 점수 허용범위를 넘었습니다.
+print(s.score)                                            # ValueError: 점수 허용범위를 넘었습니다.
+
+
+'''
