@@ -272,6 +272,8 @@ class UserAccount:
         return self.__password == password
 
 user = UserAccount("admin", "codingon123")
+print(user.username)                                   # admin
+# print(user.__password)                               # AttributeError
 
 user.change_password("abc123", "Dog123")               # 비밀번호가 일치하지 않습니다.
 user.change_password("codingon123", "Cat123")          # 비밀번호가 변경되었습니다.
@@ -281,24 +283,203 @@ print(user.check_password("Dog123"))                   # False
 
 # <실습3-2> Student 클래스: 성적 검증(@property 사용)
 class Student:
-    def __init__(self, score):
+    def __init__(self, name, score):
+        self.name = name
         self.__score = score
 
-    @property
+    @property                       # getter
     def score(self):
         return self.__score
 
-    @score.setter
+    @score.setter                   # setter
     def score(self, value):
         if 0 <= value <= 100:
             self.__score = value
         else:
-            raise ValueError("점수 허용 범위를 넘었습니다.")
+            raise ValueError("성적은 0에서 100 사이여야 합니다.")
 
-s = Student(85)
-print(f"이 학생의 점수는 {s.score} 점 입니다.")            # 이 학생의 점수는 85 점 입니다.
-s.score = 150
-print(s.score)                                            # ValueError: 점수 허용범위를 넘었습니다.
+s1 = Student("Alice", 85)
+print(s1.name)
+print(s1.score)         # 85
+
+s1.score = 105
+print(s1.score)         # ValueError: 성적은 0에서 100 사이여야 햡니다.
+
+
+
+
+# 상속
+# 부모 클래스의 속성과 메서드를 물려받아 새로운 자녀 클래스 만드는 것
+
+# 상속 기본 문법
+# 부모 클래스
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+    
+# 자녀 클래스
+class Dog(Animal):
+    pass
+
+dog = Dog("구름이")
+dog.bark()                  # 동물이 울음소리를 냅니다.
+print(dog.name)             # 구름이
+
+
+
+# super() 사용
+
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+    
+# 자녀 클래스
+class Dog(Animal):
+    def __init__(self, name, age):
+        # super 는 부모를 가리킴
+        super().__init__(name, age)
+
+
+dog = Dog("구름이", 12)
+dog.bark()                  # 동물이 울음소리를 냅니다.
+print(dog.name)             # 구름이
+print(dog.age)              # 12
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 메서드 오버라이딩
+
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # 오버라이딩
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+    
+# 자녀 클래스
+class Dog(Animal):
+    def __init__(self, name, age, species):
+        # super 는 부모를 가리킴
+        super().__init__(name, age)
+        self.species = species
+    
+    def bark(self):
+        super().bark()
+        print("멍멍")
+
+dog = Dog("구름이", 12, "포메라니안")
+dog.bark()                              # 동물이 울음소리를 냅니다. # 멍멍  
+print(dog.name)                         # 구름이
+print(dog.species)                      # 포메라니안
+
+
+
+# <실습4>
+class Shape:
+    def __init__(self, sides, base):
+        self.sides = sides
+        self.base = base
+
+    def printinfo(self):
+        print(f"변의 개수: {self.sides}")
+        print(f"밑변의 길이: {self.base}")
+    
+    def area(self):
+        print("넓이 계산이 정의되지 않았습니다.")
+
+class Rectangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+    
+    def area(self):
+        area = self.base * self.height
+        print(f"{self.sides}각형의 넓이: {area}")
+
+class Triangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+
+    def area(self):
+        area = int((self.base * self.height / 2))
+        print(f"{self.sides}각형의 넓이: {area}")
+        
+
+r = Rectangle(4, 10, 5)                               # 변의 개수: 4 / 밑변의 길이: 10 / 4각형의 넓이: 50
+r.printinfo()
+r.area()
+
+print()
+
+t = Triangle(3, 8, 6)                                 # 변의 개수: 3 / 밑변의 길이: 8 / 3각형의 넓이: 24
+t.printinfo()
+t.area()
+
+
+# 추상 클래스 (Abstract Class)
+# 클래스의 구조를 정의하는 클래스
+
+from abc import ABC, abstractclassmethod
+
+class Animal(ABC):
+    # 추상 메서드
+    @abstractclassmethod
+    def bark(self):
+        pass
+
+class Dog(Animal):
+    def bark(self):
+        print("멍멍")
+
+# a = Animal()              # TypeError: Can't instantiate abstract class Animal without an implementation for abstract method 'bark'
+a = Dog()
+a.bark()                    # 멍멍
+
+
+
+# <실습5>
+from abc import ABC, abstractclassmethod
+
+class Payment(ABC):
+    @abstractclassmethod
+    def pay(self, amount):
+        pass
+    
+class CardPayment(Payment):
+    def __init__(self):
+        super().__init__()
+    
+    def pay(self, amount):
+        print(f"카드로 {amount}원을 결제합니다.")
+
+class CashPayment(Payment):
+    def pay(self, amount):
+        print(f"현금으로 {amount}원을 결제합니다.")
+
+card = CardPayment()
+card.pay(5000)                      # 카드로 5000원을 결제합니다.
+
+cash = CashPayment()
+cash.pay(3000)                      # 현금으로 3000원을 결제합니다.
 
 
 '''
+
+
+
+
+
+
+
+
+
