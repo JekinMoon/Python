@@ -22,7 +22,7 @@ while len(lotto) < 6:
 
 print("===로또번호 생성===")
 for i in lotto:
-    print(i, end="   ")
+    print(i, end="  ")
     
 '''
 # 달력 출력하기
@@ -59,7 +59,7 @@ else:
 
 # D-day 계산기
 from datetime import datetime
-target = input("D-Day 목표 날짜를 입력하세요 (YYYY-MM-DD): ")
+target = input("\n D-Day 목표 날짜를 입력하세요 (YYYY-MM-DD): ")
 target_date = datetime.strptime(target, "%Y-%m-%d").date()
 today = datetime.today().date()
 delta = (target_date - today).days
