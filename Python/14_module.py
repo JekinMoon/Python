@@ -253,7 +253,7 @@ passed_time = today - dt
 print(f"{passed_time.days}일이 지났습니다.")
 
 # 4. 요일 반환 : weekday
-# 0: 월요일 ~ 7: 일요일
+# 0: 월요일 ~ 6: 일요일
 days = ["월", "화", "수", "목", "금", "토", "일"]
 day_num = today.weekday()
 print(days[day_num])
@@ -315,7 +315,7 @@ print(calendar.prcal(2026))
 print(calendar.month(2025, 11))
 
 # 요일 반환
-print(calendar.weekday(2025, 12,1))       # 2   (0: 월요일 ~ 7: 일요일)
+print(calendar.weekday(2025, 12,1))       # 2   (0: 월요일 ~ 6: 일요일)
 
 
 # time 모듈
@@ -436,6 +436,7 @@ print("실행되지 않는 코드")
 '''
 # OS 모듈
 # 운영체제와 상호작용 할 수 있도록 도와주는 기능 제공
+
 import os
 
 # getcwd() : 현재 작업 디렉터리 반환
