@@ -107,7 +107,7 @@ with open("with_example.txt", "a", encoding="utf-8") as f1:
             break
         f1.write(text + "\n")
 
-'''
+
 # <실습1-1> 회원 명부 작성하기
 import os
 
@@ -164,7 +164,7 @@ else:
     print("\n로그인 실패!")
 
 
-'''
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
 members = []
 
@@ -277,4 +277,85 @@ with open("member_tel.txt", "w", encoding="utf-8") as f2:
 
 print("번호 저장 완료")
 
+
+
+# 바이너리 파일 읽기
+with open('./Python/images/cat.jpg', 'rb') as f:
+    img = f.read()
+    print(img)
+
+# 바이너리 파일 쓰기
+with open("./Python/images/cat_copy.jpg", "wb") as f:
+    f.write(img)
 '''
+# pickle 모듈
+# - 객체의 형태를 유지하면서 파일에 저장하고 불러올 수 있음
+
+import pickle
+
+# 리스트, 딕셔너리 파일 저장
+with open('pickle.txt', 'wb') as f:
+    li = ['dog', 'cat']
+    dic = {1: 'dog', 2: 'cat'}
+
+    pickle.dump(li, f)
+    pickle.dump(dic, f)
+
+# 읽기
+with open('pickle.txt', 'rb') as f:
+    li = pickle.load(f)
+    dic = pickle.load(f)
+
+    print(li, dic)                  # ['dog', 'cat'] {1: 'dog', 2: 'cat'}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
