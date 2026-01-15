@@ -1,0 +1,59 @@
+.div1{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+/* hover */
+.div1:hover{
+    background-color: aquamarine;
+}
+
+/* active */
+.div1:active{
+    background-color: tomato;
+}
+
+.btn{
+    margin-top: 20px;
+    background-color: aqua;
+    cursor: pointer;
+    padding: 10px;
+    
+}
+.btn:hover{
+    background-color: aqua;
+}
+
+.btn:active{
+    background-color: darkblue;
+}
+
+input:focus{
+    background-color: coral;
+}
+
+
+/* 가상 클래스 선택자 */
+.fruits *:first-child{
+    background-color: red;
+}
+
+.fruits *:last-child{
+    background-color: blueviolet;
+}
+
+.fruits li:nth-child(2){
+    background-color: green;
+}
+
+.fruits li:nth-child(2n+1){
+    background-color: tomato;
+}
+
+.fruits *:not(li){
+    color: blue;
+}

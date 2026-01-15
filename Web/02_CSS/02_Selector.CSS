@@ -1,0 +1,70 @@
+/* 전체 선택자 */
+/* * {
+    color: red;
+} */
+
+/* 태그 선택자 : 태그 이름 */
+h1{
+    color: blue;
+}
+p{
+    background-color: brown;
+}
+
+/* 클래스 선택자 : .클래스 이름 */
+.font {
+    font-size: 25px;
+}
+
+.bg{
+    background-color: violet;
+}
+
+.font.bg{
+    font-size: 40px;
+    background-color: turquoise;
+}
+
+/* id 선택자 : #id 이름*/
+#second {
+    font-weight: 900;
+}
+
+/* ----------------------------------- */
+/* 복합 선택자 */
+
+
+
+/* 하위 선택자 : 띄어쓰기 */
+body section{
+    border:1px solid darkblue;
+    padding: 10px;
+}
+
+body .first{
+    background-color: antiquewhite;
+}
+
+.first .front{
+    font-size: 25px;
+}
+
+/* 자식 선택자 : > */
+section > li {
+    color: blue
+}
+/* section 밑에 바로 li자식이 없기 때문에 해당안됨 */
+
+section > div{
+    font-size: 30px;
+}
+
+/* 인접 형제 선택자 : + */
+.front + li{
+    background-color: aqua;
+}
+
+/* 일반 형제 선택자 : ~ */
+.front ~ li{
+    color: crimson;
+}
