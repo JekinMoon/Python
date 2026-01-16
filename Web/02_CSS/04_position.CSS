@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    text-align: center;
+    align-content: center;
+}
+
+.position-relative{
+    background-color: lightcyan;
+    position: relative;
+    left: 100px;
+}
+
+.position-absolute{
+    background-color: beige;
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+.position-fixed{
+    background-color: lightcoral;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+.z-index{
+    position: relative;
+    z-index: 1;
+    background-color: lightgreen;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

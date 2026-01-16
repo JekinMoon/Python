@@ -48,7 +48,7 @@ ul .lion ~ li {
     background-color: orange;
 }
 
-/* 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 h1:hover {
     color: red;
@@ -62,14 +62,46 @@ a:active {
 input:focus {
     background-color: orange;
 }
-*/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-.stripes *{
+.stripes {
     background-color: navy;
-    color: coral;
+    color: white;
 }
-.stripes div:nth-child(4n-2){
+.stripes *:nth-child(4n+2){
     background-color: yellow;
     color: black;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.box::after{
+    content: '빨리';
+    color: red;
+}
+
+.box::before{
+    content: '택시';
+    color: blue;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+[disabled] {
+    background-color: red;
+}
+
+[placeholder="이름"]{
+    background-color: orange;
+}
+
+input:not([placeholder]){
+    background-color: blue;
+}
+
+
+
+
+
+

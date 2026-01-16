@@ -57,3 +57,37 @@ input:focus{
 .fruits *:not(li){
     color: blue;
 }
+
+/*  가상 요소 선택자 */
+.box::after{
+    content: '목록';
+}
+
+.box::before{
+    content: '추천';
+}
+
+
+/* 속성 선택자 : []  */
+[disabled]{
+    background-color: red;
+}
+
+input:not([disabled]) {
+    background-color: blue;
+}
+
+
+
+/* 속성값이 특정 단어를 포함하는 요소 ~= */
+[class~='note']{
+    background-color: yellow;
+}
+
+/* 속성값이 특정 접두사로 시작하는 경우 ^= */
+[href^='https']{
+    color: red;
+}
+
+/* 속성값이 특정 접미사로 끝나는 경우 $= */
+/* 속성값이 특정 문자열을 포함하는 요소 *= */

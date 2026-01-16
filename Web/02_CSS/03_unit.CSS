@@ -1,0 +1,48 @@
+html{
+    font-size: 16px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.px-box{
+    width: 200px;
+    background-color: beige;
+}
+
+.percent-wrapper {
+    width: 50%;
+}
+
+.percent-box{
+    width: 100%;
+    background-color: lightcyan;
+}
+
+.em-box{
+    font-size: 20px;
+    width: 10em;
+    background-color: lightyellow;
+}
+
+.rem-box{
+    font-size: 2rem;
+    width: 10rem;
+    background-color: lightsalmon;
+}
+
+.viewport-box {
+    width:70vw;
+    background-color: azure;
+}
+
+.box {
+    border: solid black; 
+    /* border-top: 3px inset blue;
+    border-bottom: 1px dotted red; */
+    border-width: 1px 2px 3px 4px;
+    padding: 20px 10px;
+    margin: 10px;
+}
+

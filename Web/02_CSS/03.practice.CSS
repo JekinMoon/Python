@@ -1,0 +1,21 @@
+.em-box {
+    border-style: solid;
+    border-width: 5px 10px 15px 20px;
+} */
+
+.px-box {
+    border-style: solid dashed dotted double;
+} 
+
+.percent-box {
+    border-style: solid;
+    border-color: red blue green orange;
+}
+
+.viewport-box {
+    border-top: 5px solid red;
+    border-right: 10px dashed blue;
+    border-bottom: 15px dotted green;
+    border-left: 20px double orange;
+}
+
