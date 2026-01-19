@@ -1,0 +1,94 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    overflow: auto;
+    transition: all 1s linear 0.5s;
+}
+
+.box:hover{
+    width: 300px;
+    height: 300px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+img {
+    width: 300px;
+    height: 200px;
+}
+
+.container {
+    width: 1000px;
+    height: 500px;
+    background-color: #e7e7e7;
+    position: relative;
+}
+
+.img {
+    position: absolute;
+    transform: skewY(30deg);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.img:hover {
+    transform: skew(0);
+}
+
+.pic1 {
+    top: 180px;
+    left: 200px;
+    z-index: 3;
+}
+
+.pic2 {
+    top: 150px;
+    left: 350px;
+    z-index: 2;
+}
+
+.pic2:hover {
+    z-index: 3;
+}
+
+.pic3 {
+    top: 120px;
+    left: 500px;
+}
+
+.pic3:hover {
+    z-index: 3;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    transition: 1s;
+    border: 1px solid black;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.box1:hover {
+    /* transform: translateX(50px) scaleX(2); */
+    width: 200px;
+}
+
+.box2:hover {
+    transform: translateX(50%) skewX(-45deg);
+}
+
+.box3:hover {
+    border-radius: 50%;
+    background-color: red;
+    transform: translateX(300px) rotate(180deg);
+}
+
+.box4:hover {
+    transform: translateY(50px) perspective(200px) rotateY(360deg) scale(2);
+    background: yellow;
+}

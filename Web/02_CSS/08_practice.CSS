@@ -1,0 +1,50 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    position: absolute; 
+    left: 0%;
+    top: 0%;
+    border-radius: 50%;
+
+    /* 참고) 공에 그라데이션 및 그림자 적용 */
+    background: linear-gradient(45deg, yellow, orange, 70%, orangered);
+    box-shadow: -5px 5px 10px inset rgba(51, 51, 51, 0.407);
+    animation: ball 8s linear infinite;
+}
+
+@keyframes ball {
+    0% {
+        transform: translate(0, 0);
+
+    /* left: 0;
+    top: 0; */
+    }
+
+    25% {
+        transform: translate(calc(100vw - 100px), 0);
+        /* left: calc(100vw - 100px);
+        top: 0; */
+    }
+
+    50% {
+        /* left: calc(100vw - 100px);
+        top: calc(100vh - 100px);  */
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+    }
+
+    75% {
+        /* left: 0;
+        top: calc(100vh - 100px); */
+        transform: translate(0, calc(100vh - 100px));
+    }
+
+    100% {
+        /* left: 0;
+        top: 0; */
+        transform: translate(0, 0);
+    }
+}
