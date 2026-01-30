@@ -105,15 +105,15 @@ console.log('reverse:', users);
 // 배열 순회 메서드
 
 // 현재 nums 배열 : [400, 7, 6, 4, 2, 1]
-// map : 배열을 순회하면서 매개변수로 전달받은 콜백함수를 적용(원본 변경x)
+// 1. map : 배열을 순회하면서 매개변수로 전달받은 콜백함수를 적용(원본 변경x)
 nums = nums.map((x) => x * 2); // 각 요소를 한 번씩 선택해서 매개변수(x)로 전달하고, 전달받은 x에 2를 곱해서 배열로 반환
 console.log(nums); // [800, 14, 12, 8, 4, 2] 반환된 결과를 재할당
 
-// filter : callback 함수를 기준으로 요소를 필터링해서 반환(원본 변경x)
+// 2. filter : callback 함수를 기준으로 요소를 필터링해서 반환(원본 변경x)
 let filtered = nums.filter((x) => x > 5); 
 console.log(filtered);
 
-// reduce : 앞 요소에 대해 뒤 요소를 연산한 결과를 누적
+// 3. reduce : 앞 요소에 대해 뒤 요소를 연산한 결과를 누적
 // 두 번째 매개변수로 받은 0에 배열을 순회하면서 앞 요소에 뒷 요소를 더한 값을 반환
 let sum = nums.reduce((acc, cur) => acc + cur, 0); 
 console.log(sum); // 840
@@ -123,3 +123,50 @@ for (let i=0; i < nums.length; i++) {
     sum2 += nums[i];
 }
 console.log(sum2); // 840
+
+
+// -----------------------------
+
+// 4. for문
+let fruits = ['수박', '참외', '귤', '오렌지', '딸기'];
+
+// 4-1. for문
+
+
+for (let i = 0; i < fruits.length; i++){
+    console.log(`for문 활용 배열의 ${i}번째 요소 출력: ${fruits[i]}`);
+}
+
+// 출력 결과
+// for문 활용 배열의 1번째 요소 출력: 수박
+// for문 활용 배열의 2번째 요소 출력: 참외
+// ...
+
+// 4-2. for of 문
+for (let fruit of fruits) {// fruits라는 배열로부터(of) 해당 배열의 요소들을 fruit라고 부르며 배열을 순회함
+    console.log(`for of문 활용 배열의 fruit 출력: ${fruit}`);
+}
+
+// 5. 배열 메서드 forEach
+fruits.forEach((fruit, index) => 
+    console.log(`forEach 활용 배열의 ${index}번째 요소 출력: ${fruit}`)); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

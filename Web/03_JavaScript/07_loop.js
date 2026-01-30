@@ -1,39 +1,39 @@
 // 1. for문
 // 횟수를 기준으로 하는 반복문
 
-// console.log('=== for문 ===')
+console.log('=== for문 ===')
 
-// for (let i=0 ; i < 10; i++){
-//     console.log(i);
-// }
+for (let i=0 ; i < 10; i++){
+    console.log(i);
+}
 
 
-// console.log('==================');
+console.log('==================');
 
-// for (let i=0 ; i <= 10; i++){
-//     console.log(i);
-// }
+for (let i=0 ; i <= 10; i++){
+    console.log(i);
+}
 
-// console.log('==================');
+console.log('==================');
 
-// for (let i=10 ; i >= 1; i--){
-//     console.log(i);
-// }
+for (let i=10 ; i >= 1; i--){
+    console.log(i);
+}
 
-// console.log('==================');
+console.log('==================');
 
-// for (let i=0 ; i <= 20; i+=3){
-//     console.log(i);
-// }
+for (let i=0 ; i <= 20; i+=3){
+    console.log(i);
+}
 
-// console.log('==================');
+console.log('==================');
 
-// // 1부터 100까지 합 구하기
-// let sum = 0;
-// for (let i=1 ; i < 101; i++){
-//     sum += i;
-// }
-// console.log('1~100까지의 합', sum);
+// 1부터 100까지 합 구하기
+let sum = 0;
+for (let i=1 ; i < 101; i++){
+    sum += i;
+}
+console.log('1~100까지의 합', sum);
 
 console.log('==================');
 
