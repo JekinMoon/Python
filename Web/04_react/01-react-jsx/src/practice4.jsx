@@ -4,7 +4,14 @@ function Practice4() {
   return (
     <div className="container">
       <h1 className="title">{title}</h1>
-      <input className="input-field" placeholder="여기에 입력하세요" />
+      <div style={{ textAlign: 'center'}}>
+        <div>
+          아이디: <input type="text" />
+        </div>
+        <div>
+          비밀번호: <input type="text" />
+        </div>
+      </div>
     </div>
   );
 }
