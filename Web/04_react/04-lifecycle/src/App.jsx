@@ -3,6 +3,7 @@ import LifeCycleFunc from './Lifecycle';
 import PostList from './Practice1';
 import PostLists from './Practice2';
 import ColorText from './Practice3';
+import Total from './Practice4';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <PostLists />
       <hr />
       <ColorText />
-
+      <hr />
+      <Total />
     </div>
   );
 }

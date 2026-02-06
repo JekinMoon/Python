@@ -34,3 +34,21 @@ function ColorText() {
 }
 
 export default ColorText;
+
+
+
+
+// import { useState } from "react";
+// const [textColor, changeColor] = useState({color:'black', text: '검정색'});
+
+// const handleColor = (color, text) =>{
+//   changeColor({color, text});
+// };
+// return(
+//   <>
+//     <h4>글씨</h4>
+//     <button onClick={(e) => handleColor('red', e.target.innerText)}>빨간색</button>
+//     <button onClick={(e) => handleColor('blue', e.target.innerText)}>파란색</button>
+//   </>
+// )
+// export default ColorText;
